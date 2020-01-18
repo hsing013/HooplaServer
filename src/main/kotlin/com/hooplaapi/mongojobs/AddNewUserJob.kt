@@ -1,10 +1,9 @@
 package com.hooplaapi.mongojobs
 
-import com.hooplaapi.Conversation
 import com.mongodb.client.MongoDatabase
 import org.bson.Document
 
-class AddNewUserJob(query : Document, conversation: Conversation) : MongoJob<Boolean>(query) {
+class AddNewUserJob(query : Document) : MongoJob<Boolean>(query) {
 
     override fun execute(database: MongoDatabase) {
         try{

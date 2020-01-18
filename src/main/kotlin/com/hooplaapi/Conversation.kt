@@ -14,8 +14,10 @@ class Conversation(headId : Int = 0, numberOfMessages : Int = 0, conversationIde
         this.conversationIdentifier = conversationIdentifier
     }
 
-    @Synchronized fun saveNewMessage(hooplaMessage: HooplaMessage, database: MongoDatabase) : Int{
-
+    @Synchronized fun getNextHeadId(hooplaMessage: HooplaMessage, database: MongoDatabase) : Int{
+        currentHeadId += 1
+        numberOfMessages += 1
+        return currentHeadId
     }
 
 }
